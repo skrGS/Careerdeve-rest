@@ -1355,6 +1355,9 @@ const MagazineSchema = new mongoose.Schema(
       p8Career8Text2: {
         type: String,
       },
+      p8Career8Text3: {
+        type: String,
+      },
 
       p8CareerBg: {
         type: String,
