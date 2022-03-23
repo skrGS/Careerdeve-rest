@@ -17,6 +17,10 @@ const BinanceSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
+    photo1: {
+      type: String,
+      default: "no-photo.jpg",
+    },
     count: {
       type: Number,
       default: 0,
