@@ -8,6 +8,7 @@ const {
   deleteWork,
   updateWork,
   uploadWorkPhoto,
+  uploadWorkPdf,
 } = require("../controller/works");
 
 const router = express.Router();
@@ -25,5 +26,6 @@ router
   .put(protect, authorize("admin", "operator"), updateWork);
 
 router.route("/:id/upload-photo").put(uploadWorkPhoto);
+router.route("/:id/upload-pdf").put(uploadWorkPdf);
 
 module.exports = router;
