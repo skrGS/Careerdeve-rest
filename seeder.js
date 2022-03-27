@@ -23,9 +23,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-// const users = JSON.parse(
-//   fs.readFileSync(__dirname + "/data/user.json", "utf-8")
-// );
 const ariunzayas = JSON.parse(
   fs.readFileSync(__dirname + "/data/ariunzaya.json", "utf-8")
 );
