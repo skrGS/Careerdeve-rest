@@ -12,6 +12,9 @@ const WorkSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
+    pdf: {
+      type: String,
+    },
     email: {
       type: String,
       trim: true,
