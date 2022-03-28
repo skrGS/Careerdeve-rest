@@ -33,8 +33,8 @@ router
 
 router
   .route("/:id")
-  .get(authorize("admin", "operator"), getUser)
-  .put(authorize("admin"), updateUser)
+  .get(getUser)
+  .put(updateUser)
   .delete(authorize("admin"), deleteUser);
 
 module.exports = router;
