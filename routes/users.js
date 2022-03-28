@@ -26,10 +26,7 @@ router.route("/reset-password").post(resetPassword);
 router.use(protect);
 
 //"/api/v1/users"
-router
-  .route("/")
-  .get(authorize("admin"), getUsers)
-  .post(authorize("admin"), createUser);
+router.route("/").get(getUsers).post(createUser);
 
 router
   .route("/:id")
