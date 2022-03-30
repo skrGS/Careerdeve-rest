@@ -17,11 +17,6 @@ const UserSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Имэйл хаяг буруу байна.",
-    ],
-    required: [true, "Хэрэглэгчийн утасны дугаар оруулна уу"],
   },
   role: {
     type: String,
