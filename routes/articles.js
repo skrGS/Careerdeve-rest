@@ -12,6 +12,6 @@ router.route("/").get(getArticles).post(protect, authorize("admin"), createArtic
 
 router.route("/:id").get(getArticle).delete(protect, authorize("admin", "operator"), deleteArticle).put(protect, authorize("admin", "operator"), updateArticle)
 
-router.route("/:id/photo").put(protect, authorize("admin", "operator"), uploadArticlePhoto)
+router.route("/:id/photo").put(uploadArticlePhoto)
 
 module.exports = router
