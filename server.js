@@ -37,6 +37,8 @@ const plusSubsRoutes = require("./routes/plusSubs");
 const marketingSubsRoutes = require("./routes/marketingSub");
 const magazineSubsRoutes = require("./routes/magazineSub");
 const usersRoutes = require("./routes/users");
+const categoriesRoutes = require("./routes/categories");
+const articlesRoutes = require("./routes/articles");
 const injectDb = require("./middleware/injectDb");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
@@ -105,7 +107,7 @@ app.use(cors(corsOptions));
 // Клиент вэб аппуудыг мөрдөх ёстой нууцлал хамгаалалтыг http header ашиглан зааж өгнө
 app.use(helmet());
 // клиент сайтаас ирэх Cross site scripting халдлагаас хамгаална
-app.use(xss());
+// app.use(xss());
 // Клиент сайтаас дамжуулж буй MongoDB өгөгдлүүдийг халдлагаас цэвэрлэнэ
 app.use(mongoSanitize());
 // Сэрвэр рүү upload хийсэн файлтай ажиллана
@@ -140,7 +142,9 @@ app.use("/api/v1/plusSubs", plusSubsRoutes);
 app.use("/api/v1/marketingSubs", marketingSubsRoutes);
 app.use("/api/v1/magazineSubs", magazineSubsRoutes);
 
+app.use("/api/v1/categories", categoriesRoutes);
 app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/articles", articlesRoutes);
 
 // Алдаа үүсэхэд барьж авч алдааны мэдээллийг клиент тал руу автоматаар мэдээлнэ
 app.use(errorHandler);

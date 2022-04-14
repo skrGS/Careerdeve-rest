@@ -10,15 +10,15 @@ const {
   deleteCategory,
 } = require("../controller/categories");
 
-// api/v1/categories/:id/books
-const { getCategoryBooks } = require("../controller/books");
-router.route("/:categoryId/books").get(getCategoryBooks);
+// // api/v1/categories/:id/books
+// const { getCategoryBooks } = require("../controller/books");
+// router.route("/:categoryId/books").get(getCategoryBooks);
 
 //"/api/v1/categories"
 router
   .route("/")
   .get(getCategories)
-  .post(protect, authorize("admin"), createCategory);
+  .post(protect, createCategory);
 
 router
   .route("/:id")
