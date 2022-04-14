@@ -492,3 +492,4 @@
 ::ffff:192.168.1.112 - - [14/Apr/2022:01:46:03 +0000] "DELETE /api/v1/articles/62577cd061bdd436a84be4a0 HTTP/1.1" 200 251 "http://localhost:3005/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
 ::ffff:192.168.1.112 - - [14/Apr/2022:01:46:03 +0000] "GET /api/v1/articles?limit=20&sort=-createdAt HTTP/1.1" 200 5396 "http://localhost:3005/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
 ::ffff:192.168.1.112 - - [14/Apr/2022:01:46:04 +0000] "GET /api/v1/articles?limit=3&sort=-createdAt HTTP/1.1" 200 5395 "http://localhost:3005/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
+::1 - - [14/Apr/2022:03:48:53 +0000] "GET /api/v1/articles HTTP/1.1" 200 1333 "-" "PostmanRuntime/7.29.0"

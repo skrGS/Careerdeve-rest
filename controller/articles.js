@@ -175,7 +175,7 @@ exports.uploadArticlePhoto = asyncHandler(async (req, res, next) => {
             throw new MyError("Файлыг хуулах явцад алдаа гарлаа" + err.message, 400)
         }
 
-        article.photo = file.name
+        article.image = file.name
         article.save()
 
         res.status(200).json({
