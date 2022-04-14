@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const path = require("path")
 const MyError = require("../utils/myError");
 const asyncHandler = require("express-async-handler");
 const paginate = require("../utils/paginate");
@@ -212,3 +213,38 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
     user: user,
   });
 });
+
+exports.uploadProfileUser = asyncHandler(async (req, res, next) => {
+  const article = await User.findById(req.params.id)
+
+  if (!article) {
+      throw new MyError(req.params.id + " ID-тэй ном байхгүй", 400)
+  }
+
+  const file = req.files.file
+
+  // image upload
+  if(!file.mimetype.startsWith('image')) {
+      throw new MyError("Зураг оруул", 400)
+  }
+
+  if(file.size > process.env.MAX_UPLOAD_FILE_SIZE) {
+      throw new MyError("Зурагны хэмжээ хэтэрсэн байна", 400)
+  }
+
+  file.name = `photo_${req.params.id}${path.parse(file.name).ext}`
+
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, err => {
+      if(err) {
+          throw new MyError("Файлыг хуулах явцад алдаа гарлаа" + err.message, 400)
+      }
+
+      article.profile = file.name
+      article.save()
+
+      res.status(200).json({
+          success: true,
+          data: file.name,
+      })
+  })
+})

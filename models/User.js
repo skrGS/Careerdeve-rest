@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "operator", "admin"],
     default: "user",
   },
+  profile: {
+    type: String,
+},
   readNotif: [
     {
       type: mongoose.Schema.ObjectId,

@@ -73,7 +73,7 @@ exports.getCategoryArticles = asyncHandler(async (req, res, next) => {
 
 exports.getArticle = asyncHandler(async (req, res, next) => {
 
-        const article = await Article.findById(req.params.id)
+        const article = await Article.findById(req.params.id).populate({path: "createUser", select: "firstName profile"})
 
             
     if(!article) {

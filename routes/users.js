@@ -9,6 +9,7 @@ const {
   createUser,
   updateUser,
   deleteUser,
+  uploadProfileUser,
   forgotPassword,
   resetPassword,
   logout,
@@ -29,6 +30,7 @@ router.route("/").get(getUsers).post(createUser);
 
 
 router.use(protect);
+router.route("/:id/profile").put(uploadProfileUser)
 router
   .route("/:id")
   .get(getUser)
