@@ -54,8 +54,9 @@ connectDB();
 
 // Манай рест апиг дуудах эрхтэй сайтуудын жагсаалт :
 var whitelist = [
+
   "http://localhost:3000",
-  "http://localhost:3005",
+ "http://localhost:3005",
   "http://www.ihelp.mn",
   "http://ihelp.mn",
   "https://www.ihelp.mn",
@@ -64,23 +65,28 @@ var whitelist = [
   "https://www.novelistgroup.com",
   "http://novelistgroup.com",
   "http://www.novelistgroup.com",
+  "https://www.icareer.mn",
+  "https://icareer.mn",
+  "http://icareer.mn",
+  "http://www.icareer.mn",
+  "http://localhost:45678"
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
 var corsOptions = {
   // Ямар ямар домэйнээс манай рест апиг дуудаж болохыг заана
-  origin: function (origin, callback) {
+ origin: function (origin, callback) {
     if (origin === undefined || whitelist.indexOf(origin) !== -1) {
       // Энэ домэйнээс манай рест рүү хандахыг зөвшөөрнө
       callback(null, true);
-    } else {
+   } else {
       // Энэ домэйнд хандахыг хориглоно.
       callback(new Error("Horigloj baina.."));
     }
   },
   // Клиент талаас эдгээр http header-үүдийг бичиж илгээхийг зөвшөөрнө
   allowedHeaders: "Authorization, Set-Cookie, Content-Type",
-  // Клиент талаас эдгээр мэссэжүүдийг илгээхийг зөвөөрнө
+//  Клиент талаас эдгээр мэссэжүүдийг илгээхийг зөвөөрнө
   methods: "GET, POST, PUT, DELETE",
   // Клиент тал authorization юмуу cookie мэдээллүүдээ илгээхийг зөвшөөрнө
   credentials: true,
