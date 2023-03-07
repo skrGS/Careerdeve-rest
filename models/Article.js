@@ -15,15 +15,15 @@ const ArticleSchema = new mongoose.Schema({
     },
     body: [{
         type: String,
-        maxlength: [5000, "Тайлбар дээд тал нь 5000 тэмдэгт байна"]
+       
     }],
     body1: [{
         type: String,
-        maxlength: [5000, "Тайлбар дээд тал нь 5000 тэмдэгт байна"]
+        
     }],
     body2: [{
         type: String,
-        maxlength: [5000, "Тайлбар дээд тал нь 5000 тэмдэгт байна"]
+       
     }],
     category: {
         type: String,
